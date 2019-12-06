@@ -34,6 +34,20 @@ function Home() {
 							className="btn btn-primary">
 							Get people
 						</button>
+						<button
+							onClick={() => {
+								actions.getResources("vehicles");
+							}}
+							className="btn btn-success">
+							Get vehicles
+						</button>
+						<button
+							onClick={() => {
+								actions.getResources("planets");
+							}}
+							className="btn btn-info">
+							Get planets
+						</button>
 					</div>
 				</React.Fragment>
 			)}
