@@ -41,6 +41,9 @@ module.exports = {
   },
   devtool: "source-map",
   devServer: {
+    open: true,
+    port: 3000,
+    host: '0.0.0.0',
     contentBase:  './dist',
     hot: true,
     disableHostCheck: true,
