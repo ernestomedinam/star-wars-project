@@ -17,6 +17,19 @@ class AppContextProvider extends React.Component {
 				})
 		});
 	}
+	async componentDidMount() {
+		let newStore = {};
+		let resourceNames = ["people", "vehicles", "planets"];
+		for (let resource of resourceNames) {
+			newStore[resource] = await this.state.actions.getResources(
+				resource
+			);
+		}
+		this.setState({
+			...this.state,
+			store: newStore
+		});
+	}
 	render() {
 		return (
 			<AppContext.Provider value={this.state}>

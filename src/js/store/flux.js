@@ -34,6 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							resources.length,
 							" resources loaded successfuly"
 						);
+						return resources;
 					} else {
 						console.log(
 							"oh oh, this happened: ",
@@ -45,9 +46,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log("sorry! resource fetch promise rejected...");
 				}
-				setStore({
-					[resourceName]: resources
-				});
+				// setStore({
+				// 	[resourceName]: resources
+				// });
 			}
 		}
 	};

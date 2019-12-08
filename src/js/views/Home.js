@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -6,12 +6,18 @@ import { AppContext } from "../store/AppContext";
 
 //create your first component
 function Home() {
+	useEffect(() => {
+		console.log("running render form home");
+		return () => {
+			// cleanup
+		};
+	});
 	return (
 		<AppContext.Consumer>
 			{({ store, actions }) => (
 				<React.Fragment>
 					<div className="text-center mt-5">
-						<h1>Hello Rigo!</h1>
+						<h1>{"Hello " + store.people.length + "!"}</h1>
 						<p>
 							<img src={rigoImage} />
 						</p>
